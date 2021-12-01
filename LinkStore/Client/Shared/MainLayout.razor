@@ -11,17 +11,17 @@
     </MudAppBar>
     <MudDrawer @bind-Open="@OpenMenu" Elevation="0" Variant="@DrawerVariant.Persistent" Color="Color.Primary">
         <MudDrawerHeader>
-                <MudText Typo="Typo.h6"><MudIcon Icon="@Icons.Material.Filled.Store"/> LinkStore</MudText>
+                <MudText Typo="Typo.h6"><MudIcon Icon="@Icons.Material.Filled.Store"/>LinkStore</MudText>
         </MudDrawerHeader>
         <MudDivider Class="my-2" />
         <MudNavMenu>
             <MudText Typo="Typo.subtitle2" Color="Color.Inherit" Class="ml-4 my-3">Personal</MudText>
-            <MudNavLink Href="/personal/dashboard" Match="NavLinkMatch.All" Icon="@Icons.Material.Outlined.Dashboard" IconColor="Color.Inherit">Dashboard</MudNavLink>
-            <MudNavLink Href="/personal/account" Icon="@Icons.Material.Outlined.Person"  IconColor="Color.Inherit">Account</MudNavLink>
+            <MudNavLink Href="dashboard" Match="NavLinkMatch.All" Icon="@Icons.Material.Outlined.Dashboard" IconColor="Color.Inherit">Dashboard</MudNavLink>
+            <MudNavLink Href="fetchdata" Icon="@Icons.Material.Outlined.Person"  IconColor="Color.Inherit">Categories</MudNavLink>
 
             <MudText Typo="Typo.subtitle2" Color="Color.Inherit" Class="ml-4 my-3">App Examples</MudText>
-            <MudNavLink Href="application/email" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Outlined.Email"  IconColor="Color.Inherit">Email</MudNavLink>
-            <MudNavLink Href="application/chat" Icon="@Icons.Material.Outlined.Forum"  IconColor="Color.Inherit">Chat</MudNavLink>
+            <MudNavLink Href="/email" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Outlined.Email"  IconColor="Color.Inherit">Email</MudNavLink>
+            <MudNavLink Href="/chat" Icon="@Icons.Material.Outlined.Forum"  IconColor="Color.Inherit">Chat</MudNavLink>
 
         </MudNavMenu>
     </MudDrawer>
