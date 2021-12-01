@@ -62,3 +62,9 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+.mud-nav-link .mud-nav-link-expand-icon.mud-transform {
+    fill: #fafafa !important;
+}
+.mud-nav-link .mud-nav-link-expand-icon {
+    color: #fafafa !important;
+}

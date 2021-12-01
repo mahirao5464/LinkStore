@@ -18,6 +18,10 @@
             <MudText Typo="Typo.subtitle2" Color="Color.Inherit" Class="ml-4 my-3">Personal</MudText>
             <MudNavLink Href="dashboard" Match="NavLinkMatch.All" Icon="@Icons.Material.Outlined.Dashboard" IconColor="Color.Inherit">Dashboard</MudNavLink>
             <MudNavLink Href="fetchdata" Icon="@Icons.Material.Outlined.Person"  IconColor="Color.Inherit">Categories</MudNavLink>
+            <MudNavGroup Title="Category Management" Expanded="true" Icon="@Icons.Outlined.Category"  IconColor="Color.Inherit" >
+                <MudNavLink Href="Categories" Match="NavLinkMatch.All" Icon="@Icons.Outlined.List"  IconColor="Color.Inherit">Categories</MudNavLink>
+                <MudNavLink Href="Categories/Add" Match="NavLinkMatch.All"  Icon="@Icons.Outlined.Add"  IconColor="Color.Inherit">Add Catagory</MudNavLink>
+             </MudNavGroup>
 
             <MudText Typo="Typo.subtitle2" Color="Color.Inherit" Class="ml-4 my-3">App Examples</MudText>
             <MudNavLink Href="/email" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Outlined.Email"  IconColor="Color.Inherit">Email</MudNavLink>
