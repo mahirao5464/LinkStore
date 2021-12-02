@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LinkStore.Shared.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace LinkStore.Shared
         [Key]
         public int Id { get; set; }
         [Required]
+        [Display(Name = "Enter link i.e. https://www.google.com/")]
         public Uri? ImpLink { get; set; }
         [Required]
         public int CategoryId { get; set; }
