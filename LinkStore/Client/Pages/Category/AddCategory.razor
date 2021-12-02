@@ -7,9 +7,29 @@
          Add Category
      </MudText>
 </MudPaper>
+
+
 <MudGrid Style="padding-left:20px">
+    
     <MudItem sm="12" lg="9" Class="d-flex align-center justify-center mud-width-full py-8">
+       
     <EditForm Model="@model" OnValidSubmit="OnValidSubmit" style="width:inherit">
+        <MudItem lg="12" Class="m-4">
+         <MudExpansionPanels >
+            <MudExpansionPanel Text="Show Validation Summary">
+                @if (success)
+                {
+                    <MudText Color="Color.Success">Success</MudText>
+                }
+                else
+                {
+                    <MudText Color="@Color.Error">
+                        <ValidationSummary />
+                    </MudText>
+                }
+            </MudExpansionPanel>
+    </MudExpansionPanels>
+    </MudItem>
         <DataAnnotationsValidator />
         <MudCard>
             <MudCardContent>
@@ -31,20 +51,6 @@
             Fill out the form correctly to see the success message.
         </MudText>
 
-        <MudExpansionPanels>
-            <MudExpansionPanel Text="Show Validation Summary">
-                @if (success)
-                {
-                    <MudText Color="Color.Success">Success</MudText>
-                }
-                else
-                {
-                    <MudText Color="@Color.Error">
-                        <ValidationSummary />
-                    </MudText>
-                }
-            </MudExpansionPanel>
-        </MudExpansionPanels>
     </EditForm>
     </MudItem>
 </MudGrid>
