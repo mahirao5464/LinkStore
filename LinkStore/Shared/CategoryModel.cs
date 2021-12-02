@@ -15,7 +15,7 @@ namespace LinkStore.Shared
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Category Name Is Required")]
         public string? CategoryName { get; set; }        
         [Required]
         public string? Description { get; set; }

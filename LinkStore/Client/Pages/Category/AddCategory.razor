@@ -1,6 +1,91 @@
 ﻿@page "/Categories/Add"
-<h3>AddCategory</h3>
+@using LinkStore.Shared
+@using System.ComponentModel.DataAnnotations
+
+<MudPaper Class="d-flex align-center mud-full-width px-4 py-2 mt-6" Elevation="0">
+     <MudText Typo="Typo.h5">
+         Add Category
+     </MudText>
+</MudPaper>
+<MudGrid Style="padding-left:20px">
+    <MudItem sm="12" lg="9" Class="d-flex align-center justify-center mud-width-full py-8">
+    <EditForm Model="@model" OnValidSubmit="OnValidSubmit" style="width:inherit">
+        <DataAnnotationsValidator />
+        <MudCard>
+            <MudCardContent>
+                <MudTextField Label="Category Name" HelperText="Write Category Name Here"
+                              @bind-Value="model.CategoryName" For="@(() => model.CategoryName)" />
+                
+                <MudTextField T="string" Label="Description" Variant="Variant.Outlined"
+                                @bind-Value="model.Description" Lines="3" For="@(() => model.Description)"/>
+                @*<MudTextField Label="Password" HelperText="Choose a strong password" Class="mt-3"
+                              @bind-Value="model.Password" For="@(() => model.Password)" InputType="InputType.Password" />
+                <MudTextField Label="Password" HelperText="Repeat the password" Class="mt-3"
+                              @bind-Value="model.Password2" For="@(() => model.Password2)" InputType="InputType.Password" />*@
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" StartIcon="@Icons.Outlined.Add">Add</MudButton>
+            </MudCardActions>
+        </MudCard>
+        <MudText Typo="Typo.body2" Align="Align.Center" Class="my-4">
+            Fill out the form correctly to see the success message.
+        </MudText>
+
+        <MudExpansionPanels>
+            <MudExpansionPanel Text="Show Validation Summary">
+                @if (success)
+                {
+                    <MudText Color="Color.Success">Success</MudText>
+                }
+                else
+                {
+                    <MudText Color="@Color.Error">
+                        <ValidationSummary />
+                    </MudText>
+                }
+            </MudExpansionPanel>
+        </MudExpansionPanels>
+    </EditForm>
+    </MudItem>
+</MudGrid>
 
 @code {
+    CategoryModel model = new CategoryModel();
+
+
+
+    //saperate
+
+
+
+
+    RegisterAccountForm model1 = new RegisterAccountForm();
+    bool success;
+
+    public class RegisterAccountForm
+    {
+        [Required]
+        [StringLength(8, ErrorMessage = "Name length can't be more than 8.")]
+        public string Username { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Required]
+        [StringLength(30, ErrorMessage = "Password must be at least 8 characters long.", MinimumLength = 8)]
+        public string Password { get; set; }
+
+        [Required]
+        [Compare(nameof(Password))]
+        public string Password2 { get; set; }
+
+    }
+
+    private void OnValidSubmit(EditContext context)
+    {
+        success = true;
+        StateHasChanged();
+    }
 
 }

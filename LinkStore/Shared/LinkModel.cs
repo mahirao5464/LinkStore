@@ -13,7 +13,7 @@ namespace LinkStore.Shared
         [Key]
         public int Id { get; set; }
         [Required]
-        [Display(Name = "Enter link i.e. https://www.google.com/")]
+        [Display(Name = $"Enter link i.e. https://www.google.com/")]
         public Uri? ImpLink { get; set; }
         [Required]
         public int CategoryId { get; set; }
