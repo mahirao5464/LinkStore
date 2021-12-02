@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkStore.Category", "LinkStore.Category\LinkStore.Category.csproj", "{E6368371-3943-4535-9FC8-EB520706740C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkStore.Links", "LinkStore.Links\LinkStore.Links.csproj", "{A960BB57-E6CA-42B8-B3B1-93223F55A70F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,12 +37,17 @@ Global
 		{E6368371-3943-4535-9FC8-EB520706740C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6368371-3943-4535-9FC8-EB520706740C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6368371-3943-4535-9FC8-EB520706740C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A960BB57-E6CA-42B8-B3B1-93223F55A70F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A960BB57-E6CA-42B8-B3B1-93223F55A70F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A960BB57-E6CA-42B8-B3B1-93223F55A70F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A960BB57-E6CA-42B8-B3B1-93223F55A70F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E6368371-3943-4535-9FC8-EB520706740C} = {0E5563FE-A108-475F-A62F-A0A12DD61BD6}
+		{A960BB57-E6CA-42B8-B3B1-93223F55A70F} = {0E5563FE-A108-475F-A62F-A0A12DD61BD6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6EFD549-B858-46B4-872F-80FA2DDFFDD8}
