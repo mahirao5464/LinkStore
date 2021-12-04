@@ -1,49 +1,44 @@
 ﻿@page "/Categories/Add"
 @using LinkStore.Shared
 @using System.ComponentModel.DataAnnotations
+<MudPaper Class="d-flex ma-2 justify-space-around py-2 px-1" Elevation="3" Height="85vh">
 
-
-   
-
-
-<MudItem Class="mud-full-width" xs="12" lg="9">
-        <EditForm Model="@model" OnValidSubmit="OnValidSubmit" style="width:inherit" >
-            @*<MudItem lg="12" Class="m-4">
-                <MudExpansionPanels>
-                    <MudExpansionPanel Text="Show Validation Summary">
-                        @if (success)
-                        {
-                            <MudText Color="Color.Success">Success</MudText>
-                        }
-                        else
-                        {
-                            <MudText Color="@Color.Error">
-                                <ValidationSummary />
-                            </MudText>
-                        }
-                    </MudExpansionPanel>
-                </MudExpansionPanels>
-            </MudItem>*@
-            <DataAnnotationsValidator />
-            <MudCard>
-                <MudCardContent>
-                    <MudTextField Label="Category Name" HelperText="Write Category Name Here"
+<div style="max-width: 600px;">
+    <EditForm Class="pa-2 mx-2 " Model="@model" OnValidSubmit="OnValidSubmit">
+        <DataAnnotationsValidator />
+        <MudCard>
+            <MudCardContent>
+                <MudTextField Label="Category Name" HelperText="Write Category Name Here"
                                   @bind-Value="model.CategoryName" For="@(() => model.CategoryName)" />
 
                     <MudTextField T="string" Label="Description" Variant="Variant.Outlined"
                                   @bind-Value="model.Description" Lines="3" For="@(() => model.Description)" />
-                    @*<MudTextField Label="Password" HelperText="Choose a strong password" Class="mt-3"
-                        @bind-Value="model.Password" For="@(() => model.Password)" InputType="InputType.Password" />
-                        <MudTextField Label="Password" HelperText="Repeat the password" Class="mt-3"
-                        @bind-Value="model.Password2" For="@(() => model.Password2)" InputType="InputType.Password" />*@
-                </MudCardContent>
-                <MudCardActions>
-                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" StartIcon="@Icons.Outlined.Add">Add</MudButton>
-                </MudCardActions>
-            </MudCard>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" StartIcon="@Icons.Outlined.Add"> Add</MudButton>
+            </MudCardActions>
+        </MudCard>
+        <MudText Typo="Typo.body2" Align="Align.Center" Class="my-4">
+            Fill out the form correctly to see the success message.
+        </MudText>
 
-        </EditForm>
-        </MudItem>
+        <MudExpansionPanels>
+            <MudExpansionPanel Text="Show Validation Summary">
+                @if (success)
+                {
+                    <MudText Color="Color.Success">Success</MudText>
+                }
+                else
+                {
+                    <MudText Color="@Color.Error">
+                        <ValidationSummary />
+                    </MudText>
+                }
+            </MudExpansionPanel>
+        </MudExpansionPanels>
+    </EditForm>
+</div>
+</MudPaper>
 
 @code {
     CategoryModel model = new CategoryModel();
